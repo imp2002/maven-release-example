@@ -12,7 +12,6 @@ jobs:
       - name: Set up JDK 8
         uses: actions/setup-java@v1
         with:
-          distribution: 'temurin'
           java-version: '8'
           server-id: ossrh
           server-username: ${{ secrets.OSSRH_JIRA_USERNAME }}
@@ -33,10 +32,7 @@ jobs:
         run: |
           export GPG_TTY=$(tty)
           npm install -g @conveyal/maven-semantic-release semantic-release
-          semantic-release --prepare 
-          @conveyal/maven-semantic-release --publish @semantic-release/github,
-          @conveyal/maven-semantic-release --verify-conditions @semantic-release/github,
-          @conveyal/maven-semantic-release --verify-release @conveyal/maven-semantic-release
+          semantic-release --prepare @conveyal/maven-semantic-release --publish @semantic-release/github,@conveyal/maven-semantic-release --verify-conditions @semantic-release/github,@conveyal/maven-semantic-release --verify-release @conveyal/maven-semantic-release
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
