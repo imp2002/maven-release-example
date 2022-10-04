@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up JDK 8
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '8'
@@ -30,7 +30,6 @@ jobs:
 
       - name: Sematic Release
         run: |
-          export GPG_TTY=$(tty)
           npm install -g @conveyal/maven-semantic-release semantic-release
           semantic-release --prepare @conveyal/maven-semantic-release --publish @semantic-release/github,@conveyal/maven-semantic-release --verify-conditions @semantic-release/github,@conveyal/maven-semantic-release --verify-release @conveyal/maven-semantic-release
 
