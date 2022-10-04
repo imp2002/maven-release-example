@@ -1,3 +1,5 @@
+package com.imp2002.mavenrelease;
+
 import org.junit.Test;
 
 /**
