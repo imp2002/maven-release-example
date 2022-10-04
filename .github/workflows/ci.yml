@@ -10,6 +10,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up JDK 1.8
+        run: echo "$TEST"
         uses: actions/setup-java@v3
         with:
           java-version: 1.8
@@ -33,6 +34,7 @@ jobs:
           npm install -g @conveyal/maven-semantic-release semantic-release
           semantic-release --prepare @conveyal/maven-semantic-release --publish @semantic-release/github,@conveyal/maven-semantic-release --verify-conditions @semantic-release/github,@conveyal/maven-semantic-release --verify-release @conveyal/maven-semantic-release
         env:
+          TEST: ${{ secrets.TEST }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GPG_KEY_NAME: ${{ secrets.GPG_KEY_NAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
