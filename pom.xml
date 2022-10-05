@@ -8,6 +8,10 @@
     <artifactId>maven-release-example</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>maven-release-example</name>
+    <description>A example of CI auto maven release</description>
+    <url>https://github.com/imp2002/maven-release-example</url>
+
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
