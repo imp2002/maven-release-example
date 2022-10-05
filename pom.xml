@@ -11,6 +11,25 @@
     <name>maven-release-example</name>
     <description>A example of CI auto maven release</description>
     <url>https://github.com/imp2002/maven-release-example</url>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>imp2002</name>
+            <email>imp07@qq.com</email>
+            <organization>imp2002</organization>
+            <organizationUrl>https://imp2002.com/</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/imp2002/maven-release-example.git</connection>
+        <developerConnection>scm:git:https://github.com/imp2002/maven-release-example.git</developerConnection>
+        <url>https://github.com/imp2002/maven-release-example</url>
+    </scm>
 
     <distributionManagement>
         <snapshotRepository>
